@@ -16,4 +16,7 @@ function findOdd(array) {
 	}
 }
 
+//bitwise XOR is performed on a pair of bits, it returns 1 if the bits are different
+// const findOdd = array => array.reduce((a, b) => a ^ b);
+
 console.log(findOdd([20, 1, 1, 2, 2, 3, 3, 5, 5, 4, 20, 4, 5])); // 5
