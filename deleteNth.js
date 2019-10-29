@@ -28,7 +28,7 @@ function deleteNth(arr, n) {
     }
     cache[item] += 1;
 
-    console.log(cache[item]);
+    console.log(cache);
 
     // If the number of times it has appeared in the array is less or equal to
     // the limit then return true so the filter function keeps it.
