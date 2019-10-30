@@ -17,10 +17,21 @@
 //Unicode order = A-Z-a-z
 //A > a = false
 //Z > A = true
+// function printerError(s) {
+//   var count = 0;
+//   for (var i = 0; i < s.length; i++) {
+//     if (s[i] > "m") {
+//       count++;
+//     }
+//   }
+//   return count + "/" + s.length;
+// }
+
+//Same solution except with Unicode, 109 = 'm'
 function printerError(s) {
   var count = 0;
   for (var i = 0; i < s.length; i++) {
-    if (s[i] > "m") {
+    if (s[i].charCodeAt() > 109) {
       count++;
     }
   }
