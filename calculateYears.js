@@ -18,26 +18,19 @@
 // P = 1128.30
 
 function calculateYears(principal, interest, tax, desired) {
-	console.log("principal: ", principal);
-	var years = 0;
-	interest = principal * interest;
-	tax = interest * tax;
-
-	while (principal < desired) {
-		if (principal >= desired) {
-			break;
-		} else {
-			principal = principal + (interest - tax);
-			years++;
-		}
-	}
-
-	console.log("interest: ", interest);
-	console.log("tax: ", tax);
-	console.log("principalTaxed: ", principal);
-	console.log("years: ", years);
-	return years;
+  var years = 0;
+  while (principal < desired) {
+    principal += principal * interest * (1 - tax);
+    console.log("p*i: ", principal * interest);
+    console.log("1-t: ", 1 - tax);
+    console.log("p*i*(1-t): ", principal * interest * (1 - tax));
+    console.log("p: ", principal);
+    years++;
+  }
+  return years;
 }
 
-// console.log(calculateYears(1000, 0.05, 0.18, 1100));
-console.log(calculateYears(1000, 0.01625, 0.18, 1200));
+console.log(calculateYears(1000, 0.05, 0.18, 1100)); //return 3
+// console.log(calculateYears(1000, 0.01625, 0.18, 1200)); //return 14
+50;
+0.82;
