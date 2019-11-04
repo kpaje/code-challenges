@@ -20,11 +20,13 @@
 function calculateYears(principal, interest, tax, desired) {
   var years = 0;
   while (principal < desired) {
-    principal += principal * interest * (1 - tax);
+    principal += principal * interest * (1 - tax); //interest * (1 - tax) calculates the real interest
     console.log("p*i: ", principal * interest);
     console.log("1-t: ", 1 - tax);
     console.log("p*i*(1-t): ", principal * interest * (1 - tax));
     console.log("p: ", principal);
+    console.log("final: ", (principal += principal * interest * (1 - tax)));
+    console.log("----------------");
     years++;
   }
   return years;
