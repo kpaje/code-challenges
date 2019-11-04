@@ -5,7 +5,7 @@
 // maxChar("abcccccccd") === "c"
 // maxChar("apple 1231111") === "1"
 
-// forof statement to iterate through each element of array or string
+// forof statement to iterate through values of an object, preferably array or string
 // forin statement iterates through the properties of an object
 // checks if the character has been counted, if uncounted (meaning 'undefined') it assigns 1 to it's key/value pair. If already 1, it increments
 function maxChar(str) {
