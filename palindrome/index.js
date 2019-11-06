@@ -8,37 +8,37 @@
 //   palindrome("abcdefg") === false
 
 // function palindrome(str) {
-// 	var reversed = "";
-// 	reversed = str
-// 		.split("")
-// 		.reverse()
-// 		.join("");
-// 	if (str === reversed) {
-// 		return true;
-// 	} else {
-// 		return false;
-// 	}
+//   var reversed = "";
+//   reversed = str
+//     .split("")
+//     .reverse()
+//     .join("");
+//   if (str == reversed) {
+//     return true;
+//   } else {
+//     return false;
+//   }
 // }
 
 //ES6
-// function palindrome(str) {
-// 	let reversed = str
-// 		.split("")
-// 		.reverse()
-// 		.join("");
-// 	return str === reversed ? true : false;
+function palindrome(str) {
+  let reversed = str
+    .split("")
+    .reverse()
+    .join("");
+  //   return str === reversed ? true : false;
 
-// 	//This also works
-// 	// return str === reversed
-// }
+  //This also works
+  return str === reversed;
+}
 
 //Every() method
 // [a,b,c,b,a]; compares from outside in or first to last
 // str[str.length - index - 1], index starts at 0, but there are 5 elements, subract index to increment through the loop, then substract 1 to start at last index
-function palindrome(str) {
-	return str.split("").every((char, index) => {
-		return char === str[str.length - index - 1];
-	});
-}
+// function palindrome(str) {
+// 	return str.split("").every((char, index) => {
+// 		return char === str[str.length - index - 1];
+// 	});
+// }
 
 module.exports = palindrome;
