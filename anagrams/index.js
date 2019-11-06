@@ -8,45 +8,45 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-// function anagrams(stringA, stringB) {
-//   const aCharMap = buildCharMap(stringA);
-//   const bCharMap = buildCharMap(stringB);
+function anagrams(stringA, stringB) {
+  const aCharMap = buildCharMap(stringA);
+  const bCharMap = buildCharMap(stringB);
 
-//   if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
-//     return false;
-//   }
+  if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
+    return false;
+  }
 
-//   for (const char in aCharMap) {
-//     if (aCharMap[char] !== bCharMap[char]) {
-//       return false;
-//     }
-//   }
-//   return true;
-// }
+  for (const char in aCharMap) {
+    if (aCharMap[char] !== bCharMap[char]) {
+      return false;
+    }
+  }
+  return true;
+}
 
-// // Helper function, removes spaces & special chars via regex \w switch and converts to lowercase, builds object with key/value count
-// function buildCharMap(str) {
-//   const charMap = {};
+// Helper function, /w switch finds word characters; a character from a-z, A-Z, 0-9, including the _ (underscore) character.
+function buildCharMap(str) {
+  const charMap = {};
 
-//   for (let char of str.replace(/[^\w]/g, "").toLowerCase()) {
-//     charMap[char] = charMap[char] + 1 || 1;
-//   }
-//   return charMap;
-// }
+  for (let char of str.replace(/[^\w]/g, "").toLowerCase()) {
+    charMap[char] = charMap[char] + 1 || 1;
+  }
+  return charMap;
+}
 
 //sort() method
-function anagrams(stringA, stringB) {
-  return cleanString(stringA) === cleanString(stringB);
-}
+// function anagrams(stringA, stringB) {
+//   return cleanString(stringA) === cleanString(stringB);
+// }
 
-//Helper Function
-function cleanString(str) {
-  return str
-    .replace(/[^\w]/g, "")
-    .toLowerCase()
-    .split("")
-    .sort()
-    .join("");
-}
+// //Helper Function
+// function cleanString(str) {
+//   return str
+//     .replace(/[^\w]/g, "")
+//     .toLowerCase()
+//     .split("")
+//     .sort()
+//     .join("");
+// }
 
 module.exports = anagrams;
