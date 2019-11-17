@@ -15,6 +15,7 @@ class LinkedList {
   }
 
   insertFirst(data) {
+    // this.insertAt(data, 0) //code reuse strategy
     const node = new Node(data, this.head);
     this.head = node;
     // this.head = new Node(data, this.head); //refactored
@@ -33,10 +34,12 @@ class LinkedList {
   }
 
   getFirst() {
+    // return this.getAt(0) //code reuse strategy
     return this.head;
   }
 
   getLast() {
+    // return this.getAt(this.size() - 1) //code reuse strategy
     if (!this.head) {
       return null;
     }
