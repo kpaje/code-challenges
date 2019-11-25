@@ -17,7 +17,25 @@ function bubbleSort(arr) {
 }
 
 // O(N^2)
-function selectionSort(arr) {}
+function selectionSort(arr) {
+	for (let i = 0; i < arr.length; i++) {
+		let indexOfMin = 0;
+
+		for (let j = i + 1; j < arr.length; j++) {
+			if (arr[j] < arr[indexOfMin]) {
+				indexOfMin = j;
+			}
+		}
+
+		if (indexOfMin !== i) {
+			let lesser = arr[indexOfMin];
+			arr[indexOfMin] = arr[i];
+			arr[i] = lesser;
+		}
+	}
+
+	return arr;
+}
 
 // O(N * log(N))
 function mergeSort(arr) {}
